@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url({{url_for('static',filename='images/index_wallpaper.webp')}})] font-serif">  
+  
+  <div class="fixed right-0 top-0 bottom-0 w-1/4 flex flex-col items-center align-center p-6 min-w-fit">
+    <div class="p-6 text-5xl w-full text-black font-bold bg-slate-100 rounded-lg bg-opacity-60 text-center align-center">
+        <img class="w-80" src="{{url_for('static',filename='images/logo.png')}}">
+    </div>
+    <div class="flex w-full mt-5 py-16 flex-auto flex-col bg-slate-100 rounded-lg bg-opacity-60 text-center align-center justify-between">
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <a href="{{url_for('login')}}">
+                Iniciar Sesión
+            </a>
+        </div>
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <a href="{{url_for('nosotros')}}">
+                Nosotros
+            </a>   
+        </div>
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <a href="{{url_for('contactar')}}">
+                Contactanos
+            </a>
+        </div>
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <a href="{{url_for('ubicacion')}}">
+                Ubicación
+            </a>
+        </div>
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <a href="{{url_for('loginworker')}}">
+                Empleados
+            </a>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

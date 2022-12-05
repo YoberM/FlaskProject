@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-800 w-full h-full font-serif">  
+  
+  <div class="w-full h-full  flex flex-col items-center align-middle justify-center p-6 ">
+    <img class="w-64 align-center" src="{{url_for('static',filename='images/logo.png')}}">
+    <div class="w-full pt-6 max-w-md flex  flex-auto flex-col rounded-lg text-center align-center justify-between">
+        <div class=" w-full cursor-pointe  p-2 rounded-lg  text-lg font-bold ">
+            <input class="w-full  cursor-pointer p-2 rounded-lg text-md font-bold duration-150 " type="text" placeholder="Correo">
+        </div>
+        <div class=" w-full  cursor-pointer p-2 rounded-lg text-lg font-bold ">
+            <input class="w-full  cursor-pointer   p-2 rounded-lg text-md font-bold duration-150 " type="text" placeholder="Contraseña">
+        </div>
+
+        <div class=" w-full  text-opacity-40 text-white cursor-pointer p-2 rounded-lg text-md font-bold ">
+          <a class="text-opacity-20" href="{{url_for('register')}}">Crear una cuenta</a>
+        </div>
+
+        <div class=" w-full  cursor-pointer   ">
+          <button class="w-full p-2 bg-orange-200 rounded-lg text-black text-md font-bold hover:bg-black hover:text-white duration-150">Iniciar Sesión</button>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
