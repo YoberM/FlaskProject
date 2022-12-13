@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-800	bg-opacity-50 w-full h-full font-serif">
+
+  {% block content %}
+  <form method="post">
+    
+  <div class="h-full flex flex-col items-center align-center">
+      <div class=" p-6 text-5xl text-black font-bold rounded-lg  text-center align-center ">
+        <img class="w-80" src="{{url_for('static',filename='images/logo.png')}}">
+      </div>
+    <div class="  flex  px-4 py-8 flex-auto flex-col rounded-lg text-center align-center justify-between ">
+      <div class=" w-full  cursor-pointer py-2  ">
+          <button class="w-full  px-6  p-4   rounded-lg text-black text-lg font-bold  duration-150"></button>
+      </div>
+
+            <div class="flex flex-col w-full  px-6  p-4 bg-orange-200 rounded-lg text-black text-lg font-bold  duration-150">
+
+              {% for page in pedido %}
+              <div class="flex flex-row">
+
+                <div class="basis-1/12 mx-1"> {{page[0]}} </div>
+                <div class="basis-10/12 mx-1 text-left"> {{page[1]}} </div>
+                <div class="basis-1/12 mx-1"> S/.{{page[2]}} </div>
+
+              </div>
+              {% endfor %}
+
+              <div class="flex flex-row">
+                <div class="basis-1/2 cursor-pointer mx-1 p-1 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+  
+                  <select class="w-full  px-6  p-4 bg-orange-200 rounded-lg text-black text-lg font-bold " id="selectid" onchange="this.form.submit()" name = "idpedido">
+  
+                    {% for page in opciones %}
+                    <option value="{{page[0]}}">Pedido #{{page[0]}}</option>
+                    {% endfor %}
+              </select>
+                </div>
+                <div class="basis-1/2 cursor-pointer mx-1 p-1 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+              Total : S/{{datos[1]}}
+                </div>
+                </div>
+
+<br><br>
+            <div class="flex flex-row">
+              <div class="basis-1/2 cursor-pointer mx-5 p-1 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+
+                <a href="{{url_for('pedidomesero')}}">
+                Regresar
+                </a>
+              </div>
+              </div>
+            </div>
+    </div>
+  </div>
+</form>
+  {% endblock %}
+</body>
+</html>

@@ -12,59 +12,80 @@
       <div class=" p-6  font-bold rounded-lg  text-center align-center ">
         <img class="w-80" src="{{url_for('static',filename='images/logo.png')}}">
       </div>
+      <div class="py-4">
+        Seleccione su mesa por favor.
+      </div>
+
     <div class=" grid grid-cols-3 gap-6 ">
       <div>
-        <button class="relative text-center">
-            <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
-            <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
-                1
-            </div>
-        </button>  
+        <form method="post" >
+          <button class="relative text-center">
+              <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
+              <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
+                  1
+              </div>
+              <input type="text" hidden="true" value="1" name="numero" id="numero">
+          </button>
+        </form>
       </div>
       <div>
-        <button class="relative text-center">
-            <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
-            <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
-                2
-            </div>
-        </button>
+        <form method="post">
+          <button class="relative text-center">
+              <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
+              <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
+                  2
+              </div>
+              <input type="text" hidden="true" value="2" name="numero" id="numero">
+          </button>
+        </form>
         
       </div>
       <div>
+        <form method="post">
         <button class="relative text-center">
             <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
             <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
                 3
             </div>
+            <input type="text" hidden="true" value="3"name="numero" id="numero">
         </button>
+      </form>
         
       </div>
       <div>
+        <form method="post">
         <button class="relative text-center">
             <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
             <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
             4
             </div>
+            <input type="text" hidden="true" value="4"name="numero" id="numero">
         </button>
+      </form>
         
       </div>
       <div>
+        <form method="post">
         <button class="relative text-center">
             <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
             <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
                 5
             </div>
+            <input type="text" hidden="true" value="5"name="numero" id="numero">
         </button>
+      </form>
         
       </div>
       <div>
+        <form method="post">
         <button class="relative text-center">
             <img class="w-32" src="{{url_for('static',filename='images/mesa.png')}}">
             <div class="absolute left-1/2 top-1/2 text-white transform -translate-x-1/2 -translate-y-1/2 text-4xl">
                 6
             </div>
+            <input type="text" hidden="true" value="6"name="numero" id="numero">
         </button>
-        
+      </form>
       </div>
     </div>
   </div>

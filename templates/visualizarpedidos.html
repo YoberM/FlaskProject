@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-300 w-full h-full font-serif">
+
+  
+  {% block content %}
+  <div class="h-full flex flex-col items-center align-center">
+      <div class=" p-6 text-5xl text-black font-bold rounded-lg  text-center align-center ">
+        <img class="w-80" src="{{url_for('static',filename='images/logo.png')}}">
+      </div>
+    <div class="  flex  px-8 bg-white py-8 flex-auto flex-col rounded-lg text-center align-center justify-between ">
+      {% for page in estados %}
+      <div class="flex flex-row w-full  cursor-pointer py-8  ">
+        <div class="basis-1/4 object-center">Mesa #{{page[0]}}</div> 
+        <select class="w-full  px-6  p-4 bg-orange-200 rounded-lg text-black text-lg font-bold " value ="{{page[1]}}">
+  
+          <option value='{{page[1]}}'>{{page[1]}}</option>
+          <option value="">En preparacion</option>
+          <option value="">En espera de orden</option>
+          <option value="">En espera</option>
+        </select>
+      </div>
+      
+
+      {% endfor %}
+      
+      <div class="flex flex-row">
+        <div  class=" cursor-pointer mx-5 p-4 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+
+            <a href="{{url_for('pedidomesero')}}"  class="basis-1/2 cursor-pointer mx-5 p-4 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+              Regresar
+            </a>
+        </div>
+
+    </div>
+    </div>
+    
+  </div>
+  {% endblock %}
+</body>
+</html>

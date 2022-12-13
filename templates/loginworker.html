@@ -7,21 +7,23 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-800 w-full h-full font-serif">  
-  
+
   <div class="w-full h-full  flex flex-col items-center align-middle justify-center p-6 ">
+  <form method="get" id="loginworkerform">
     <img class="w-64 align-center" src="{{url_for('static',filename='images/logo.png')}}">
     <div class="w-full pt-6 max-w-md flex  flex-auto flex-col rounded-lg text-center align-center justify-between">
         <div class=" w-full cursor-pointer  p-2 rounded-lg  text-lg font-bold ">
-            <input class="w-full  cursor-pointer p-2 rounded-lg text-md font-bold duration-150 " type="text" placeholder="Codigo Trabajador">
+            <input class="w-full  cursor-pointer p-2 rounded-lg text-md font-bold duration-150 " type="text"  placeholder="Correo" id="iduser" name="iduser">
         </div>
         <div class=" w-full  cursor-pointer p-2 rounded-lg text-lg font-bold ">
-            <input class="w-full  cursor-pointer   p-2 rounded-lg text-md font-bold duration-150 " type="text" placeholder="Contraseña">
+            <input class="w-full  cursor-pointer   p-2 rounded-lg text-md font-bold duration-150 " type="text" placeholder="Contraseña" id="contrasenia" name="contrasenia">
         </div>
 
         <div class=" w-full  cursor-pointer   ">
-          <button class="w-full p-2 bg-orange-200 rounded-lg text-black text-md font-bold hover:bg-black hover:text-white duration-150">Iniciar Sesión</button>
+          <button class="w-full p-2 bg-orange-200 rounded-lg text-black text-md font-bold hover:bg-black hover:text-white duration-150"  type="submit">Iniciar Sesión</button>
         </div>
     </div>
+  </form>
   </div>
 </body>
 </html>

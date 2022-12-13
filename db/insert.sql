@@ -19,8 +19,6 @@ INSERT INTO 'estado' ('estado_id','nombre') VALUES
 INSERT INTO 'pedido' ('pedido_id','numero_mesa','fecha','estado_id','cliente_id') VALUES
 ('1','3','22 Nov','13','1'),
 ('2','5','21 Nov','13','2');
-
-
 INSERT INTO 'pedido_platillo' ('pedido_id_pedido','platillo_id_platillo','cantidad') VALUES
 ('1','1000','1'),
 ('1','1002','1'),

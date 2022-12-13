@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-800 w-full h-full font-serif">
+
+  <div class="w-full h-full  flex flex-col items-center align-middle justify-center p-5 ">
+
+        <div class=" cursor-pointer mx-20  p-2 bg-black rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-600">
+            <img class="object-contain bg-yellow-300  text-center align-center justify-between" src="{{url_for('static',filename='images/carta.png')}}">
+<br>
+            <div class="flex flex-row">
+                <div  onclick="location.href='{{url_for('cliente')}}'" class="basis-1/2 cursor-pointer mx-5 p-4 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+
+                        Regresar
+                </div>
+                <a href="/static/images/carta.png" download class="basis-1/2 cursor-pointer mx-5 p-4 bg-blue-900 rounded-lg text-white text-lg font-bold duration-150 hover:bg-slate-700">
+                  Descargar
+                </a>
+
+            </div>
+      <br>
+
+        </div>
+  </div>
+</body>
+</html>
