@@ -11,6 +11,8 @@ app = Flask(__name__)
 login_manager_app = LoginManager(app)
 
 
+app.secret_key = "My Secret key"
+
 ## BASE DATOS
 @login_manager_app.user_loader
 def load_user(user_id):
