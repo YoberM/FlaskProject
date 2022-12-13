@@ -10,7 +10,7 @@ login_manager = LoginManager()
 app = Flask(__name__)
 login_manager_app = LoginManager(app)
 
-app.secret_key = "My Secret key"
+
 ## BASE DATOS
 @login_manager_app.user_loader
 def load_user(user_id):
@@ -34,7 +34,6 @@ if(file_exists('restaurante.db') == False):
 def CreateConnection(db = "restaurante.db"):
     con = sqlite3.connect(db)
     return con
-## BASE dATOS END
     
 @app.route("/")
 def index():
@@ -42,6 +41,7 @@ def index():
 
 @app.route("/login", methods=('POST','GET'))
 def login():
+    
     if request.method == 'GET':
         if current_user.is_authenticated:
             return redirect(url_for('cliente'))
