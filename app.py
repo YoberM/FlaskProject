@@ -13,6 +13,7 @@ login_manager_app = LoginManager(app)
 
 app.secret_key = "My Secret key"
 
+
 ## BASE DATOS
 @login_manager_app.user_loader
 def load_user(user_id):
@@ -147,6 +148,7 @@ def register():
         direccion = request.form['direccion']
         correo = request.form['correo']
         contraseña = request.form['contraseña']
+        tipo = request.form['tipo']
         con =  sqlite3.connect('restaurante.db')
         cur = con.cursor()
         
@@ -165,14 +167,26 @@ def register():
                 VALUES ('{newid}','{nombres}','{apellidos}','{correo}','{contraseña}','{telefono}','{direccion}')
                 """.format(newid = newid, nombres = nombres,apellidos=apellidos,correo=correo,contraseña= contraseña,telefono = telefono, direccion=direccion)
         cur.execute(query)
-        query = f"""
-            INSERT INTO 'cliente' ('cliente_id') VALUES
-            ('{newid}');
-        """
-        cur.execute(query)
-        con.commit()
-        con.close()
-        return redirect("/login")
+        query = ""
+        if(tipo == "cliente"):
+            query = f"""
+                INSERT INTO 'cliente' ('cliente_id') VALUES
+                ('{newid}');
+            """
+            cur.execute(query)
+            con.commit()
+            con.close()
+            return redirect("/login")
+
+        elif(tipo=="mesero"):
+            query = f"""
+                INSERT INTO 'trabajador' ('trabajador_id') VALUES
+                ('{newid}');
+            """
+            cur.execute(query)
+            con.commit()
+            con.close()
+            return redirect("/loginworker")
     return render_template("register.html")
 
 
@@ -243,8 +257,19 @@ def pedido():
 
         print(lista)
 
+        # Procesando lista
+        y = []
+        z = []
 
-
+        for i in range(len(lista) - 1):
+            if lista[i] in y:
+                index = y.index(lista[i])
+                print(index)
+                z[index] += 1
+            else:
+                y.append(lista[i])
+                z.append(1)
+        lista = y
         con = CreateConnection()
         cur = con.cursor()
         print(current_user.id)
@@ -286,9 +311,9 @@ def pedido():
         sql = """
             INSERT INTO pedido_platillo (pedido_id_pedido,platillo_id_platillo,cantidad) VALUES
             """
-        for i in range(len(lista)-1):
-            sql = sql + f"('{pedido_id}','{lista[i][0]}','1')"
-            if(i!=len(lista)-2):
+        for i in range(len(lista)):
+            sql = sql + f"('{pedido_id}','{lista[i][0]}','{z[i]}')"
+            if(i!=len(lista)-1):
                 sql = sql + ','
 
         print(sql)
@@ -332,7 +357,7 @@ def comprobante():
     pedido = pedido.fetchall()
     total = 0
     for i in pedido:
-        total += i[2]
+        total += i[2]*i[0]
     datos = [0 ,total]
 
 
