@@ -194,6 +194,9 @@ def register():
 def testdb():
     con = CreateConnection()
     cur = con.cursor()
+    print(cur.execute("SELECT * FROM persona").fetchall())
+    print(cur.execute("SELECT * FROM pedido").fetchall())
+    print(cur.execute("SELECT * FROM pedido").fetchall())
     print(cur.execute("SELECT * FROM pedido").fetchall())
     print(cur.execute("SELECT * FROM pedido_platillo").fetchall())
     return render_template("nosotros.html")

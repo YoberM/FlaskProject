@@ -8,12 +8,25 @@
 </head>
 <body class="bg-[url({{url_for('static',filename='images/index_wallpaper.webp')}})] font-serif">  
   
-  <div class="flex flex-col items-center p-10">
-    <div class="p-6 text-5xl text-black font-bold rounded-lg text-center align-center justify-center">
+  <div class="flex flex-row items-center p-6">
+
+  <div class="flex flex-col items-center p-10 p-6 text-5xl text-black font-bold rounded-lg text-center align-center justify-center" >
+    <div class="-full  cursor-pointer   p-2 rounded-lg text-md font-bold duration-150 ">
         <img class="w-80" src="{{url_for('static',filename='images/logo.png')}}">
     </div>
-    <div class="flex w-full mt-5 py-16 flex-auto flex-col bg-slate-100 rounded-lg bg-opacity-60 text-center align-center justify-between text-black text-5xl">
+    <div class="p-6 text-base text-black bg-slate-100 font-bold rounded-lg text-center align-center justify-center">
+      <p class="text-left "> Avenida 28 - Comida peruana Gourmet</p>
+      <p class="text-left font-medium"> Direccion</p>
+      <p class="text-left font-thin"> Avenida de la Cultura, Moquegua, Perú</p>
+    </div>
+  </div>
+
+    <div class=" flex p-20 py-8  flex-col bg-slate-100 rounded-lg bg-opacity-60 text-center align-center  text-black text-5xl">
     Puedes encontrarnos en...
+      <br>
+      <div>
+      <img class=" w-full p-4 rounded-lg bg-slate-200 hover:bg-slate-400 duration-150 " src="{{url_for('static',filename='images/mapa.png')}}">
+      </div>
     </div>
   </div>
 </body>
